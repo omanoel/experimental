@@ -1,0 +1,25 @@
+.container {
+  text-align: center;
+  padding: 1em;
+  width:100%;
+  height: calc(100% - 64px);
+
+  .item-card {
+    padding: 0px;
+    height: 100%;
+    .mat-card-header {
+      background-color: #EFEFEF;
+    }
+  }
+}
+
+.logo {
+  width: 150px;
+  margin: 0 auto;
+}
+
+q {
+  font-style: italic;
+  quotes: "« " " »";
+}
+

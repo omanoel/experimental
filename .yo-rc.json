@@ -1,0 +1,18 @@
+{
+  "generator-ngx-rocket": {
+    "version": "3.1.1",
+    "props": {
+      "appName": "gridster",
+      "target": [
+        "web"
+      ],
+      "pwa": true,
+      "ui": "material",
+      "layout": "simple",
+      "auth": false,
+      "projectName": "gridster",
+      "packageManager": "npm",
+      "mobile": []
+    }
+  }
+}

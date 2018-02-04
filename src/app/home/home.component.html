@@ -1,0 +1,49 @@
+<button (click)="addItem()">Add...</button>
+    <div class="container">
+  <gridster [options]="options">
+    <gridster-item [item]="item" *ngFor="let item of dashboard">
+        <ndc-dynamic [ndcDynamicComponent]="item.component" [ndcDynamicInputs]="item.dataset"></ndc-dynamic>
+    </gridster-item>
+    <!--
+          *****************************************
+        -->
+    <gridster-item [item]="dashboard[0]">
+      <mat-card class="item-card">
+        <mat-card-header class="drag-handler">
+          <button mat-icon-button class="drag-handler" title="Move...">
+            <mat-icon>dashboard</mat-icon>
+          </button>
+          <p (mousedown)="$event.stopPropagation()" (touchstart)="$event.stopPropagation()">Titre de la zone 0</p>
+          <button mat-icon-button title="Open..." (mousedown)="$event.stopPropagation()" (touchstart)="$event.stopPropagation()">
+            <mat-icon>open_in_new</mat-icon>
+          </button>
+        </mat-card-header>
+        <mat-card-content (mousedown)="$event.stopPropagation()" (touchstart)="$event.stopPropagation()">
+          <mat-card>
+            <mat-card-content>
+              <p>Lipsums dsfdsf fsdf sdf dsfs f fsdfsf grgdxg sg sgg s eg e</p>
+            </mat-card-content>
+          </mat-card>
+        </mat-card-content>
+      </mat-card>
+    </gridster-item>
+    <gridster-item [item]="dashboard[1]">
+      <mat-card class="item-card">
+        <mat-card-header class="drag-handler">
+          <button mat-icon-button class="drag-handler" title="Move...">
+            <mat-icon>dashboard</mat-icon>
+          </button>
+          <p (mousedown)="$event.stopPropagation()" (touchstart)="$event.stopPropagation()">Titre de la zone 0</p>
+        </mat-card-header>
+        <mat-card-content (mousedown)="$event.stopPropagation()" (touchstart)="$event.stopPropagation()">
+          <mat-card>
+            <mat-card-content>
+              <p>Lipsums dsfdsf fsdf sdf dsfs f fsdfsf grgdxg sg sgg s eg e</p>
+            </mat-card-content>
+          </mat-card>
+        </mat-card-content>
+      </mat-card>
+    </gridster-item>
+
+  </gridster>
+</div>
