@@ -1,4 +1,4 @@
-# gridster
+# experimental
 
 Welcome to the project documentation!
 

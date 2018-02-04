@@ -1,6 +1,6 @@
 {
-  "name": "gridster",
-  "short_name": "gridster",
+  "name": "experimental",
+  "short_name": "experimental",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{
