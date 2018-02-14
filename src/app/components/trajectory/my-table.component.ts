@@ -42,8 +42,17 @@ export class MyTableComponent {
   }
 
   newWindow(): void {
-    const newWindow = this._window.open('', '_blank', 'width=500,height=400');
+    const newWindow = this._window.open('', 'newWindow', 'menubar=0,location=0,status=0,width=500,height=400');
     // angular.element($scope.window.document.body).append($compile('<div>{{var}}</div>')($scope));
+    let inner = '';
+    for (let z = 0; z < this._window.document.head.childNodes.length; z++) {
+      if (this._window.document.head.childNodes[z].nodeName === 'STYLE') {
+        inner += this._window.document.head.childNodes[z].firstChild.parentElement.innerText;
+      }
+    }
+    const elem: HTMLElement = {};
+    elem.innerText = inner;
+    newWindow.document.head.appendChild(elem);
     newWindow.document.body.appendChild(
       this.domService.appendComponentToBody(MyTableComponent, null, null)
     );
