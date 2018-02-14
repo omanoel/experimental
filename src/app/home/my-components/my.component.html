@@ -1,4 +1,5 @@
 <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
   <input type="text" class="form-control" id="name" required [(ngModel)]="maValeur.valeur" name="name" #name="ngModel">
   <p>maValeur.valeur : {{maValeur?.valeur}}</p>
+  <app-area-chart></app-area-chart>
 </form>

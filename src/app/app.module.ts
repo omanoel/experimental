@@ -16,6 +16,7 @@ import { AboutModule } from './about/about.module';
 
 import { DomService } from './core/dom.service';
 import { WindowRefService } from './core/window-ref.service';
+import { Child2Module } from './child2/child2.module';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { WindowRefService } from './core/window-ref.service';
     CoreModule,
     SharedModule,
     HomeModule,
+    Child2Module,
     AboutModule,
     AppRoutingModule
   ],

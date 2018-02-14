@@ -7,6 +7,7 @@ import { WindowRefService } from './../core/window-ref.service';
 import { GridsterConfig, GridsterItem } from 'angular-gridster2';
 import { My1Component } from './my-components/my1.component';
 import { My2Component } from './my-components/my2.component';
+import { MyTableComponent } from './../components/trajectory/my-table.component';
 
 @Component({
   selector: 'app-home',
@@ -41,8 +42,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private quoteService: QuoteService,
     private windowRefService: WindowRefService) {
-      this._window = this.windowRefService.nativeWindow;
-    }
+    this._window = this.windowRefService.nativeWindow;
+  }
 
   ngOnInit() {
     this.isLoading = true;
@@ -53,6 +54,8 @@ export class HomeComponent implements OnInit {
     this.options = {
       itemChangeCallback: HomeComponent.itemChange,
       itemResizeCallback: HomeComponent.itemResize,
+      gridType: 'scrollVertical',
+      scrollToNewItems: true
     };
 
     this.dashboard = [
@@ -99,6 +102,19 @@ export class HomeComponent implements OnInit {
       compactEnabled: false,
       component: My2Component,
       dataset: this.monDataset
-  });
+    });
+  }
+  addTableItem() {
+    this.dashboard.push({
+      cols: 1,
+      rows: 1,
+      y: 2,
+      x: 2,
+      dragEnabled: true,
+      resizeEnabled: true,
+      compactEnabled: false,
+      component: MyTableComponent,
+      dataset: this.monDataset
+    });
   }
 }

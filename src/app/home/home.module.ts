@@ -11,12 +11,19 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { QuoteService } from './quote.service';
 
+import { AgGridModule } from 'ag-grid-angular/main';
+
 import { GridsterModule } from 'angular-gridster2';
 import { DynamicModule } from 'ng-dynamic-component';
 
 import { MyComponent } from './my-components/my.component';
 import { My1Component } from './my-components/my1.component';
 import { My2Component } from './my-components/my2.component';
+import { MyTableComponent } from '../components/trajectory/my-table.component';
+import { RedComponent } from '../components/trajectory/red.component';
+
+import { AreaChartComponent } from './../d3/area-chart/area-chart.component';
+import { DatasetService } from '../shared/dataset/dataset.service';
 
 @NgModule({
   imports: [
@@ -30,19 +37,26 @@ import { My2Component } from './my-components/my2.component';
     HomeRoutingModule,
     GridsterModule,
     DynamicModule.withComponents([
-      MyComponent, My1Component, My2Component
+      MyComponent, My1Component, My2Component, MyTableComponent
+    ]),
+    AgGridModule.withComponents([
+      RedComponent
     ])
   ],
   declarations: [
     HomeComponent,
     MyComponent,
     My1Component,
-    My2Component
+    My2Component,
+    AreaChartComponent,
+    MyTableComponent,
+    RedComponent
   ],
   exports: [
   ],
   providers: [
-    QuoteService
+    QuoteService,
+    DatasetService
   ]
 })
 export class HomeModule { }

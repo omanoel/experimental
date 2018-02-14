@@ -4,6 +4,7 @@ import { RouteReuseStrategy, RouterModule } from '@angular/router';
 import { HttpModule, Http, XHRBackend, ConnectionBackend, RequestOptions } from '@angular/http';
 import { TranslateModule } from '@ngx-translate/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { TreeModule } from 'angular-tree-component';
 
 import { MaterialModule } from '../material.module';
 import { ShellComponent } from './shell/shell.component';
@@ -12,6 +13,7 @@ import { RouteReusableStrategy } from './route-reusable-strategy';
 import { I18nService } from './i18n.service';
 import { HttpService } from './http/http.service';
 import { HttpCacheService } from './http/http-cache.service';
+import { AppTreeComponent } from './app-tree.component';
 
 export function createHttpService(backend: ConnectionBackend,
                                   defaultOptions: RequestOptions,
@@ -26,11 +28,13 @@ export function createHttpService(backend: ConnectionBackend,
     TranslateModule,
     FlexLayoutModule,
     MaterialModule,
-    RouterModule
+    RouterModule,
+    TreeModule
   ],
   declarations: [
     HeaderComponent,
-    ShellComponent
+    ShellComponent,
+    AppTreeComponent
   ],
   providers: [
     I18nService,

@@ -1,8 +1,9 @@
 <button (click)="addItem()">Add...</button>
-    <div class="container">
+<button (click)="addTableItem()">Add table...</button>
+<div class="container">
   <gridster [options]="options">
     <gridster-item [item]="item" *ngFor="let item of dashboard">
-        <ndc-dynamic [ndcDynamicComponent]="item.component" [ndcDynamicInputs]="item.dataset"></ndc-dynamic>
+      <ndc-dynamic [ndcDynamicComponent]="item.component" [ndcDynamicInputs]="item.dataset"></ndc-dynamic>
     </gridster-item>
     <!--
           *****************************************
